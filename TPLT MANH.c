@@ -51,18 +51,12 @@ void        dfs(int u)
             {
                 tp++;
                 sl[tp]= 0;
-                mitp[tp] = oo;
                 while(true)
                 {
                     int v= st.top();
                     st.pop();
-                    ok[v] = true;
-                    if (mitp[tp] >c[v])
-                    {
-                        mitp[tp] = c[v];
-                        sl[tp] = 1;
-                    }
-                    else if (mitp[tp]==c[v]) sl[tp]++;
+                    sl[tp] ++;
+		    num[v] = low[v] = N*N;
                     if (v==u) break;
                 }
             }
